@@ -1,0 +1,70 @@
+server_node:
+  ros__parameters:
+    endpoint: opc.tcp://localhost:4840/freeopcua/server
+    server_uri: "0"
+    component_list: [machine_1, machine_2]
+    machine_1:
+      tag_list: [start, stop, reset, home, ready, alarm]
+      read_write_tags: [start, stop, reset, home]
+      read_only_tags: [ready, alarm]
+      tags:
+        start:
+          node_id: ns=4;s=machine_1_start
+          browse_name: start
+          variant: false
+          read_only: false
+        stop:
+          node_id: ns=4;s=machine_1_stop
+          browse_name: stop
+          variant: false
+          read_only: false
+        reset:
+          node_id: ns=4;s=machine_1_reset
+          browse_name: reset
+          variant: false
+          read_only: false
+        home:
+          node_id: ns=4;s=machine_1_home
+          browse_name: home
+          variant: false
+          read_only: false
+        ready:
+          node_id: ns=4;s=machine_1_ready
+          browse_name: ready
+          variant: false
+          read_only: true
+        alarm:
+          node_id: ns=4;s=machine_1_alarm
+          browse_name: alarm
+          variant: false
+          read_only: true
+    machine_2:
+      tag_list: [start, stop, reset, ready, busy]
+      read_write_tags: [start, stop, reset]
+      read_only_tags: [ready, busy]
+      tags:
+        start:
+          node_id: ns=4;s=machine_2_start
+          browse_name: start
+          variant: false
+          read_only: false
+        stop:
+          node_id: ns=4;s=machine_2_stop
+          browse_name: stop
+          variant: false
+          read_only: false
+        reset:
+          node_id: ns=4;s=machine_2_reset
+          browse_name: reset
+          variant: false
+          read_only: false
+        ready:
+          node_id: ns=4;s=machine_2_ready
+          browse_name: ready
+          variant: false
+          read_only: true
+        busy:
+          node_id: ns=4;s=machine_2_busy
+          browse_name: busy
+          variant: false
+          read_only: true
